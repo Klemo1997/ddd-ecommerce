@@ -9,8 +9,6 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>org.eshop</groupId>
-
     <artifactId>application</artifactId>
 
     <dependencies>

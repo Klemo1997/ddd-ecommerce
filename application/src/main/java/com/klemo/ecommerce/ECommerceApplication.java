@@ -1,4 +1,4 @@
-package org.eshop;
+package com.klemo.ecommerce;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringBootConfiguration;
