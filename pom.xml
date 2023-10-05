@@ -18,6 +18,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>application</module>
+        <module>sales</module>
     </modules>
 
     <properties>
