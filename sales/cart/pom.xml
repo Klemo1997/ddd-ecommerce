@@ -10,4 +10,14 @@
     </parent>
 
     <artifactId>cart</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>cart-domain</module>
+        <module>cart-domain/cart-domain-core</module>
+        <module>cart-domain/cart-application-service</module>
+        <module>cart-application</module>
+        <module>cart-infrastructure</module>
+        <module>cart-infrastructure/cart-dataaccess</module>
+        <module>cart-infrastructure/cart-messaging</module>
+    </modules>
 </project>

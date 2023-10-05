@@ -25,7 +25,35 @@
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
     </properties>
 
-    <dependencyManagement></dependencyManagement>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.klemo.ecommerce</groupId>
+                <artifactId>cart-application</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.klemo.ecommerce</groupId>
+                <artifactId>cart-domain-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.klemo.ecommerce</groupId>
+                <artifactId>cart-application-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.klemo.ecommerce</groupId>
+                <artifactId>cart-dataaccess</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.klemo.ecommerce</groupId>
+                <artifactId>cart-messaging</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies></dependencies>
 

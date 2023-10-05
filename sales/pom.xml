@@ -17,9 +17,5 @@
         <module>catalog</module>
         <module>order</module>
         <module>cart/cart-domain</module>
-        <module>cart/cart-domain/cart-domain-core</module>
-        <module>cart/cart-domain/cart-application-service</module>
-        <module>cart/cart-application</module>
-        <module>cart/cart-infrastructure</module>
     </modules>
 </project>
