@@ -19,6 +19,8 @@
     <modules>
         <module>application</module>
         <module>sales</module>
+        <module>common</module>
+        <module>common/common-domain</module>
     </modules>
 
     <properties>
