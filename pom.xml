@@ -25,6 +25,7 @@
 
     <properties>
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+        <junit-jupiter.version>5.10.0</junit-jupiter.version>
     </properties>
 
     <dependencyManagement>
@@ -58,6 +59,24 @@
                 <groupId>com.klemo.ecommerce</groupId>
                 <artifactId>common-domain</artifactId>
                 <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>${junit-jupiter.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-params</artifactId>
+                <version>${junit-jupiter.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-engine</artifactId>
+                <version>${junit-jupiter.version}</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
