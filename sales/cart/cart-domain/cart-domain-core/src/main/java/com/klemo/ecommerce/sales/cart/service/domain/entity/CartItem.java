@@ -22,4 +22,20 @@ public class CartItem extends Entity<CartItemId> {
         this.unitPrice = unitPrice;
         this.quantity = quantity;
     }
+
+    public ProductId getProductId() {
+        return productId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public Money getUnitPrice() {
+        return unitPrice;
+    }
+
+    public Quantity getQuantity() {
+        return quantity;
+    }
 }
