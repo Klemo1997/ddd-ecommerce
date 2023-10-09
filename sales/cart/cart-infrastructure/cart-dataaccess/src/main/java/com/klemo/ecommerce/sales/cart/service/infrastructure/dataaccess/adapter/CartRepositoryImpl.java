@@ -40,7 +40,7 @@ public class CartRepositoryImpl implements CartRepository {
                 new CartItemId(cartItemEntity.getId()),
                 new ProductId(cartItemEntity.getProductId()),
                 cartItemEntity.getTitle(),
-                new Money(), // todo: implement
+                Money.getInstance(cartItemEntity.getUnitPrice(), cartItemEntity.getCurrency()),
                 new Quantity(cartItemEntity.getQuantity())
         );
     }

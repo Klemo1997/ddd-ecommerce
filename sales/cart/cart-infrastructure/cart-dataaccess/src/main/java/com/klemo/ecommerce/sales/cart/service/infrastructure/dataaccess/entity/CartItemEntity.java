@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.util.Currency;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -27,7 +28,17 @@ public class CartItemEntity {
 
     private BigDecimal unitPrice;
 
+    private String currency;
+
     private Integer quantity;
+
+    public void setCurrency(Currency currency) {
+        this.currency = currency.getCurrencyCode();
+    }
+
+    public Currency getCurrency() {
+        return Currency.getInstance(currency);
+    }
 
     @Override
     public boolean equals(Object o) {
