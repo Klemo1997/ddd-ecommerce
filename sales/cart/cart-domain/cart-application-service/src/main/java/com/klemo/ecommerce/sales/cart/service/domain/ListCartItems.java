@@ -1,7 +1,7 @@
 package com.klemo.ecommerce.sales.cart.service.domain;
 
 import com.klemo.ecommerce.sales.cart.service.domain.dto.ListCartItemsQuery;
-import com.klemo.ecommerce.sales.cart.service.domain.dto.ListCartResponse;
+import com.klemo.ecommerce.sales.cart.service.domain.dto.ListCartItemsResponse;
 import com.klemo.ecommerce.sales.cart.service.domain.entity.Cart;
 import com.klemo.ecommerce.sales.cart.service.domain.output.CartRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -18,12 +18,12 @@ public class ListCartItems {
     }
 
     @Transactional(readOnly = true)
-    ListCartResponse listCart(ListCartItemsQuery query) {
+    public ListCartItemsResponse listCart(ListCartItemsQuery query) {
         Cart cart = cartRepository.findCartById(query.cartId())
                 .orElseThrow(() -> {
                     log.warn("Could not find cart with id: {}", query.cartId());
                     return new CartNotFoundException("Could not find cart with id: " + query.cartId());
                 });
-        return new ListCartResponse(cart.getItems());
+        return new ListCartItemsResponse(cart.getItems());
     }
 }

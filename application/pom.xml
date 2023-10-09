@@ -20,5 +20,21 @@
             <groupId>com.klemo.ecommerce</groupId>
             <artifactId>cart-application</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.klemo.ecommerce</groupId>
+            <artifactId>cart-dataaccess</artifactId>
+        </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>19</source>
+                    <target>19</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
