@@ -30,7 +30,7 @@ public class CartItemEntity {
 
     private String currency;
 
-    private Integer quantity;
+    private Long quantity;
 
     public void setCurrency(Currency currency) {
         this.currency = currency.getCurrencyCode();

@@ -26,6 +26,34 @@ public class CartRepositoryImpl implements CartRepository {
                 .map(this::cartFromCartEntity);
     }
 
+    @Override
+    public Cart save(Cart cart) {
+        return cartFromCartEntity(jpaRepository.save(cartEntityFromCart(cart)));
+    }
+
+    private CartEntity cartEntityFromCart(Cart cart) {
+        CartEntity cartEntity = new CartEntity(
+            cart.getId().getValue(),
+            cart.getItems().stream().map(this::cartItemEntityFromCartItem).toList()
+        );
+
+        cartEntity.getItems().forEach(item -> item.setCart(cartEntity));
+
+        return cartEntity;
+    }
+
+    private CartItemEntity cartItemEntityFromCartItem(CartItem cartItem) {
+        return new CartItemEntity(
+            cartItem.getId().getValue(),
+            null,
+            cartItem.getProductId().getValue(),
+            cartItem.getTitle(),
+            cartItem.getUnitPrice().amount(),
+            cartItem.getUnitPrice().currency().getCurrencyCode(),
+            cartItem.getQuantity().value()
+        );
+    }
+
     private Cart cartFromCartEntity(CartEntity cartEntity) {
         List<CartItem> cartItems = cartEntity.getItems().stream().map(this::cartItemFromCartItemEntity).toList();
 

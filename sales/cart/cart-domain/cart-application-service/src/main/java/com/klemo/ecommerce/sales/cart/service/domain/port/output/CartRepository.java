@@ -7,4 +7,6 @@ import java.util.Optional;
 
 public interface CartRepository {
     Optional<Cart> findCartById(CartId cartId);
+
+    Cart save(Cart cart);
 }
