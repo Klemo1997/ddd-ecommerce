@@ -16,12 +16,23 @@ public final class Product extends Entity<ProductId> {
         this.setId(id);
     }
 
+    public Product(ProductId id, String title, String description, Money price) {
+        this.setId(id);
+        this.title = title;
+        this.description = description;
+        this.price = price;
+    }
+
     public void changeTitle(String title) {
         this.title = title;
     }
 
     public void changeDescription(String description) {
         this.description = description;
+    }
+
+    public void changePrice(Money price) {
+        this.price = price;
     }
 
     public String getTitle() {
