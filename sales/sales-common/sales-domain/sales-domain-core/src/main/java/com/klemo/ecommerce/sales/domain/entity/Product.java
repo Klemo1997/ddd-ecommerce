@@ -4,7 +4,7 @@ import com.klemo.ecommerce.domain.entity.Entity;
 import com.klemo.ecommerce.domain.value_object.Money;
 import com.klemo.ecommerce.domain.value_object.ProductId;
 
-public class Product extends Entity<ProductId> {
+public final class Product extends Entity<ProductId> {
 
     private String title;
 
