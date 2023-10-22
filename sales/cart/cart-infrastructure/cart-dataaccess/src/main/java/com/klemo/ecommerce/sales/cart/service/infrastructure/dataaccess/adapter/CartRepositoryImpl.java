@@ -3,7 +3,7 @@ package com.klemo.ecommerce.sales.cart.service.infrastructure.dataaccess.adapter
 import com.klemo.ecommerce.domain.value_object.*;
 import com.klemo.ecommerce.sales.cart.service.domain.entity.Cart;
 import com.klemo.ecommerce.sales.cart.service.domain.entity.CartItem;
-import com.klemo.ecommerce.sales.cart.service.domain.output.CartRepository;
+import com.klemo.ecommerce.sales.cart.service.domain.port.output.CartRepository;
 import com.klemo.ecommerce.sales.cart.service.infrastructure.dataaccess.entity.CartEntity;
 import com.klemo.ecommerce.sales.cart.service.infrastructure.dataaccess.entity.CartItemEntity;
 import com.klemo.ecommerce.sales.cart.service.infrastructure.dataaccess.repository.CartJpaRepository;

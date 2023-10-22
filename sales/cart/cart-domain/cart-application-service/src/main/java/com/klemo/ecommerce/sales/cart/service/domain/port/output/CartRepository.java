@@ -1,4 +1,4 @@
-package com.klemo.ecommerce.sales.cart.service.domain.output;
+package com.klemo.ecommerce.sales.cart.service.domain.port.output;
 
 import com.klemo.ecommerce.domain.value_object.CartId;
 import com.klemo.ecommerce.sales.cart.service.domain.entity.Cart;
