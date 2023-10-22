@@ -10,4 +10,8 @@
     </parent>
 
     <artifactId>common</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>common-application</module>
+    </modules>
 </project>

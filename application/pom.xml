@@ -24,5 +24,9 @@
             <groupId>com.klemo.ecommerce</groupId>
             <artifactId>cart-dataaccess</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.klemo.ecommerce</groupId>
+            <artifactId>sales-dataaccess</artifactId>
+        </dependency>
     </dependencies>
 </project>
