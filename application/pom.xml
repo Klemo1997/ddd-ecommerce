@@ -26,6 +26,14 @@
         </dependency>
         <dependency>
             <groupId>com.klemo.ecommerce</groupId>
+            <artifactId>catalog-application</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.klemo.ecommerce</groupId>
+            <artifactId>catalog-dataaccess</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.klemo.ecommerce</groupId>
             <artifactId>sales-dataaccess</artifactId>
         </dependency>
     </dependencies>
