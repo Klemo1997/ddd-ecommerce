@@ -18,10 +18,6 @@
         </dependency>
         <dependency>
             <groupId>com.klemo.ecommerce</groupId>
-            <artifactId>cart-application</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.klemo.ecommerce</groupId>
             <artifactId>cart-dataaccess</artifactId>
         </dependency>
         <dependency>
