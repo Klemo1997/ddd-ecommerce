@@ -21,6 +21,7 @@
         <module>sales</module>
         <module>common</module>
         <module>common/common-domain</module>
+        <module>portal</module>
     </modules>
 
     <properties>
