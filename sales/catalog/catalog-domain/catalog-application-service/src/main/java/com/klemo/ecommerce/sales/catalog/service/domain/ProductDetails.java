@@ -22,9 +22,11 @@ public class ProductDetails {
                     return new ProductNotFoundException("Could not find product with id: " + query.productId());
                 });
         return new ProductDetailsResponse(
+            product.getId().getValue(),
             product.getTitle(),
             product.getDescription(),
-            product.getPrice()
+            product.getPrice().amount(),
+            product.getPrice().currency().getCurrencyCode()
         );
     }
 }

@@ -1,10 +1,13 @@
 package com.klemo.ecommerce.sales.catalog.service.domain.dto;
 
-import com.klemo.ecommerce.domain.value_object.Money;
+import java.math.BigDecimal;
+import java.util.UUID;
 
 public record ProductDetailsResponse(
+    UUID id,
     String title,
     String description,
-    Money price
+    BigDecimal price,
+    String currency
 ) {
 }

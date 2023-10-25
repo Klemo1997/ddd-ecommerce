@@ -26,6 +26,7 @@ public class ListProducts {
 
     private com.klemo.ecommerce.sales.catalog.service.domain.dto.Product productToProductDto(Product product) {
         return new com.klemo.ecommerce.sales.catalog.service.domain.dto.Product(
+                product.getId().getValue(),
                 product.getTitle(),
                 product.getDescription(),
                 product.getPrice().amount(),
