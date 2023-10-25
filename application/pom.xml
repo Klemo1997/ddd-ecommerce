@@ -36,5 +36,9 @@
             <groupId>com.klemo.ecommerce</groupId>
             <artifactId>sales-dataaccess</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.klemo.ecommerce</groupId>
+            <artifactId>portal-application</artifactId>
+        </dependency>
     </dependencies>
 </project>

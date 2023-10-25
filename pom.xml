@@ -93,6 +93,16 @@
             </dependency>
             <dependency>
                 <groupId>com.klemo.ecommerce</groupId>
+                <artifactId>portal-application</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.klemo.ecommerce</groupId>
+                <artifactId>portal-application-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.klemo.ecommerce</groupId>
                 <artifactId>common-domain</artifactId>
                 <version>${project.version}</version>
             </dependency>
