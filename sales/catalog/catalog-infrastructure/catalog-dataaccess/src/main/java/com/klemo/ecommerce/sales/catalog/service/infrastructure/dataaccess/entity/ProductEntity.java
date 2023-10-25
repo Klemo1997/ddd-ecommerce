@@ -3,6 +3,7 @@ package com.klemo.ecommerce.sales.catalog.service.infrastructure.dataaccess.enti
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -20,13 +21,13 @@ import java.util.UUID;
 public class ProductEntity {
     @Id private UUID id;
     
-    private String title;
+    @NotNull private String title;
 
-    private String description;
+    @NotNull private String description;
 
-    private BigDecimal unitPrice;
+    @NotNull private BigDecimal unitPrice;
     
-    private String currency;
+    @NotNull private String currency;
 
     public void setCurrency(Currency currency) {
         this.currency = currency.getCurrencyCode();

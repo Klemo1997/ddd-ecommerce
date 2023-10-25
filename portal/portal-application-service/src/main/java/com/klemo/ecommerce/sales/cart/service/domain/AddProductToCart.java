@@ -10,6 +10,7 @@ import com.klemo.ecommerce.sales.cart.service.domain.port.output.CartRepository;
 import com.klemo.ecommerce.sales.catalog.service.domain.Product;
 import com.klemo.ecommerce.sales.catalog.service.domain.ProductNotFoundException;
 import com.klemo.ecommerce.sales.catalog.service.domain.port.output.ProductRepository;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -22,11 +23,11 @@ import java.util.UUID;
 @Slf4j
 @Component
 public class AddProductToCart {
-    private final CartRepository cartRepository;
-    private final ProductRepository productRepository;
+    @NonNull private final CartRepository cartRepository;
+    @NonNull private final ProductRepository productRepository;
 
     @Transactional
-    public AddProductToCartResponse add(UUID cartId, AddProductToCartCommand command) {
+    public AddProductToCartResponse add(@NonNull UUID cartId, @NonNull AddProductToCartCommand command) {
         Cart cart = cartRepository.findCartById(new CartId(cartId))
                 .orElseThrow(() -> {
                     log.warn("Could not find cart with id: {}", cartId);

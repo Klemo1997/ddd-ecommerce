@@ -7,6 +7,7 @@ import com.klemo.ecommerce.sales.catalog.service.domain.Product;
 import com.klemo.ecommerce.sales.catalog.service.domain.port.output.ProductRepository;
 import com.klemo.ecommerce.sales.catalog.service.infrastructure.dataaccess.entity.ProductEntity;
 import com.klemo.ecommerce.sales.catalog.service.infrastructure.dataaccess.repository.ProductJpaRepository;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
@@ -17,19 +18,19 @@ import java.util.Optional;
 @Component
 @RequiredArgsConstructor
 public class ProductRepositoryImpl implements ProductRepository {
-    private final ProductJpaRepository jpaRepository;
+    @NonNull private final ProductJpaRepository jpaRepository;
 
     private static final int PAGE_SIZE = 10;
     private static final int PAGE_OFFSET = -1;
 
     @Override
-    public Optional<Product> findProductById(ProductId productId) {
+    public Optional<Product> findProductById(@NonNull ProductId productId) {
         return jpaRepository.findById(productId.getValue())
                 .map(this::productFromProductEntity);
     }
 
     @Override
-    public List<Product> findProducts(Page page) {
+    public List<Product> findProducts(@NonNull Page page) {
         return jpaRepository
                 .findAll(Pageable.ofSize(PAGE_SIZE).withPage(page.value() + PAGE_OFFSET))
                 .map(this::productFromProductEntity)

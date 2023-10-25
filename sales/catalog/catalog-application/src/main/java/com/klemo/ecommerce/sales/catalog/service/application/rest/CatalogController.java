@@ -8,6 +8,7 @@ import com.klemo.ecommerce.sales.catalog.service.domain.dto.ListProductsQuery;
 import com.klemo.ecommerce.sales.catalog.service.domain.dto.ListProductsResponse;
 import com.klemo.ecommerce.sales.catalog.service.domain.dto.ProductDetailsQuery;
 import com.klemo.ecommerce.sales.catalog.service.domain.dto.ProductDetailsResponse;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -20,8 +21,8 @@ import java.util.UUID;
 @RequiredArgsConstructor
 @RequestMapping(value = "/v1/catalog", produces = "application/json")
 public final class CatalogController {
-    private final ListProducts listProducts;
-    private final ProductDetails productDetails;
+    @NonNull private final ListProducts listProducts;
+    @NonNull private final ProductDetails productDetails;
 
     @GetMapping("/products")
     public ResponseEntity<ListProductsResponse> listProducts(@RequestParam(defaultValue = "1") Integer page) {
@@ -32,7 +33,7 @@ public final class CatalogController {
     }
 
     @GetMapping("/products/{productId}")
-    public ResponseEntity<ProductDetailsResponse> productDetails(@PathVariable UUID productId) {
+    public ResponseEntity<ProductDetailsResponse> productDetails(@NonNull @PathVariable UUID productId) {
         var query = new ProductDetailsQuery(new ProductId(productId));
         try {
             ProductDetailsResponse response = productDetails.details(query);

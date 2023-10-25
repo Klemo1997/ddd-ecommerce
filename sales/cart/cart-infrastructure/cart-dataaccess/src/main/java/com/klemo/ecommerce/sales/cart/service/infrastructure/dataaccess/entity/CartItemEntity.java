@@ -1,6 +1,7 @@
 package com.klemo.ecommerce.sales.cart.service.infrastructure.dataaccess.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -22,15 +23,15 @@ public class CartItemEntity {
     @JoinColumn(name = "CART_ID")
     private CartEntity cart;
 
-    private UUID productId;
+    @NotNull private UUID productId;
 
-    private String title;
+    @NotNull private String title;
 
-    private BigDecimal unitPrice;
+    @NotNull private BigDecimal unitPrice;
 
-    private String currency;
+    @NotNull private String currency;
 
-    private Long quantity;
+    @NotNull private Long quantity;
 
     public void setCurrency(Currency currency) {
         this.currency = currency.getCurrencyCode();

@@ -7,27 +7,26 @@ import com.klemo.ecommerce.sales.cart.service.domain.port.output.CartRepository;
 import com.klemo.ecommerce.sales.cart.service.infrastructure.dataaccess.entity.CartEntity;
 import com.klemo.ecommerce.sales.cart.service.infrastructure.dataaccess.entity.CartItemEntity;
 import com.klemo.ecommerce.sales.cart.service.infrastructure.dataaccess.repository.CartJpaRepository;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 
 @Component
+@RequiredArgsConstructor
 public class CartRepositoryImpl implements CartRepository {
-    private final CartJpaRepository jpaRepository;
-
-    public CartRepositoryImpl(CartJpaRepository jpaRepository) {
-        this.jpaRepository = jpaRepository;
-    }
+    @NonNull final CartJpaRepository jpaRepository;
 
     @Override
-    public Optional<Cart> findCartById(CartId cartId) {
+    public Optional<Cart> findCartById(@NonNull CartId cartId) {
         return jpaRepository.findById(cartId.getValue())
                 .map(this::cartFromCartEntity);
     }
 
     @Override
-    public Cart save(Cart cart) {
+    public Cart save(@NonNull Cart cart) {
         return cartFromCartEntity(jpaRepository.save(cartEntityFromCart(cart)));
     }
 
@@ -42,7 +41,7 @@ public class CartRepositoryImpl implements CartRepository {
         return cartEntity;
     }
 
-    private CartItemEntity cartItemEntityFromCartItem(CartItem cartItem) {
+    private CartItemEntity cartItemEntityFromCartItem(@NonNull CartItem cartItem) {
         return new CartItemEntity(
             cartItem.getId().getValue(),
             null,

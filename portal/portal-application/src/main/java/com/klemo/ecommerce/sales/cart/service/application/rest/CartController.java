@@ -11,6 +11,7 @@ import com.klemo.ecommerce.sales.cart.service.domain.dto.ListCartItemsQuery;
 import com.klemo.ecommerce.sales.cart.service.domain.dto.ListCartItemsResponse;
 import com.klemo.ecommerce.sales.cart.service.domain.entity.Cart;
 import com.klemo.ecommerce.sales.catalog.service.domain.ProductNotFoundException;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -24,11 +25,11 @@ import java.util.UUID;
 @RequiredArgsConstructor
 @RequestMapping(value = "/v1/carts", produces = "application/json")
 public class CartController {
-    private final ListCartItems listCartItems;
-    private final AddProductToCart addProductToCart;
+    @NonNull private final ListCartItems listCartItems;
+    @NonNull private final AddProductToCart addProductToCart;
 
     @GetMapping("/{cartId}")
-    public ResponseEntity<ListCartItemsResponse> listItems(@PathVariable UUID cartId) {
+    public ResponseEntity<ListCartItemsResponse> listItems(@NonNull @PathVariable UUID cartId) {
         try {
             ListCartItemsQuery query = new ListCartItemsQuery(new CartId(cartId));
             ListCartItemsResponse response = listCartItems.listCart(query);
@@ -39,7 +40,8 @@ public class CartController {
     }
 
     @PostMapping("/{cartId}/item")
-    public ResponseEntity<Object> addItem(@PathVariable UUID cartId, @RequestBody AddProductToCartCommand command) {
+    public ResponseEntity<Object> addItem(@NonNull @PathVariable UUID cartId,
+                                          @NonNull @RequestBody AddProductToCartCommand command) {
         log.info("Adding item to cart: {} , details: {}", cartId, command);
         try {
             AddProductToCartResponse response = addProductToCart.add(cartId, command);

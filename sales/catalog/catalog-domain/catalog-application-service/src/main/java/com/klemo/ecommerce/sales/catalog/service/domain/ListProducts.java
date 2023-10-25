@@ -4,6 +4,7 @@ import com.klemo.ecommerce.domain.value_object.Page;
 import com.klemo.ecommerce.sales.catalog.service.domain.dto.ListProductsQuery;
 import com.klemo.ecommerce.sales.catalog.service.domain.dto.ListProductsResponse;
 import com.klemo.ecommerce.sales.catalog.service.domain.port.output.ProductRepository;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -16,10 +17,10 @@ import java.util.List;
 @Component
 @RequiredArgsConstructor
 public class ListProducts {
-    private final ProductRepository productRepository;
+    @NonNull private final ProductRepository productRepository;
 
     @Transactional(readOnly = true)
-    public ListProductsResponse list(ListProductsQuery query) {
+    public ListProductsResponse list(@NonNull ListProductsQuery query) {
         List<Product> productsList = productRepository.findProducts(new Page(query.page()));
         return new ListProductsResponse(productsList.stream().map(this::productToProductDto).toList());
     }

@@ -5,6 +5,8 @@ import com.klemo.ecommerce.sales.cart.service.domain.dto.ListCartItemsResponse;
 import com.klemo.ecommerce.sales.cart.service.domain.entity.Cart;
 import com.klemo.ecommerce.sales.cart.service.domain.entity.CartItem;
 import com.klemo.ecommerce.sales.cart.service.domain.port.output.CartRepository;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,15 +15,12 @@ import java.util.List;
 
 @Slf4j
 @Component
+@RequiredArgsConstructor
 public class ListCartItems {
-    private final CartRepository cartRepository;
-
-    public ListCartItems(CartRepository cartRepository) {
-        this.cartRepository = cartRepository;
-    }
+    @NonNull private final CartRepository cartRepository;
 
     @Transactional(readOnly = true)
-    public ListCartItemsResponse listCart(ListCartItemsQuery query) {
+    public ListCartItemsResponse listCart(@NonNull ListCartItemsQuery query) {
         Cart cart = cartRepository.findCartById(query.cartId())
                 .orElseThrow(() -> {
                     log.warn("Could not find cart with id: {}", query.cartId());
@@ -31,11 +30,12 @@ public class ListCartItems {
     }
 
     private List<com.klemo.ecommerce.sales.cart.service.domain.dto.CartItem> cartItemsToCartItemDtos(
-            List<CartItem> items) {
+            @NonNull List<CartItem> items) {
         return items.stream().map(this::cartItemToCartItemDto).toList();
     }
 
-    private com.klemo.ecommerce.sales.cart.service.domain.dto.CartItem cartItemToCartItemDto(CartItem cartItem) {
+    private com.klemo.ecommerce.sales.cart.service.domain.dto.CartItem cartItemToCartItemDto(
+            @NonNull CartItem cartItem) {
         return new com.klemo.ecommerce.sales.cart.service.domain.dto.CartItem(
             cartItem.getProductId().getValue(),
             cartItem.getTitle(),
