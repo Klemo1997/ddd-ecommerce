@@ -73,21 +73,6 @@
             </dependency>
             <dependency>
                 <groupId>com.klemo.ecommerce</groupId>
-                <artifactId>sales-domain-core</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.klemo.ecommerce</groupId>
-                <artifactId>sales-application-service</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.klemo.ecommerce</groupId>
-                <artifactId>sales-dataaccess</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.klemo.ecommerce</groupId>
                 <artifactId>portal-application</artifactId>
                 <version>${project.version}</version>
             </dependency>

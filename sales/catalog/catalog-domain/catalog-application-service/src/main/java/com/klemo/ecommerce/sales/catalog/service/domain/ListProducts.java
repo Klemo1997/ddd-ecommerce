@@ -3,12 +3,12 @@ package com.klemo.ecommerce.sales.catalog.service.domain;
 import com.klemo.ecommerce.domain.value_object.Page;
 import com.klemo.ecommerce.sales.catalog.service.domain.dto.ListProductsQuery;
 import com.klemo.ecommerce.sales.catalog.service.domain.dto.ListProductsResponse;
-import com.klemo.ecommerce.sales.domain.entity.Product;
-import com.klemo.ecommerce.sales.domain.port.output.ProductRepository;
+import com.klemo.ecommerce.sales.catalog.service.domain.port.output.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+import com.klemo.ecommerce.sales.catalog.service.domain.Product;
 
 import java.util.List;
 

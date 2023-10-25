@@ -19,10 +19,6 @@
         </dependency>
         <dependency>
             <groupId>com.klemo.ecommerce</groupId>
-            <artifactId>sales-application-service</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.klemo.ecommerce</groupId>
             <artifactId>common-domain</artifactId>
         </dependency>
         <dependency>

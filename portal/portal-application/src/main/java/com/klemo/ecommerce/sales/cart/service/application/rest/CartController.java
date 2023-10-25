@@ -10,7 +10,7 @@ import com.klemo.ecommerce.sales.cart.service.domain.dto.AddProductToCartRespons
 import com.klemo.ecommerce.sales.cart.service.domain.dto.ListCartItemsQuery;
 import com.klemo.ecommerce.sales.cart.service.domain.dto.ListCartItemsResponse;
 import com.klemo.ecommerce.sales.cart.service.domain.entity.Cart;
-import com.klemo.ecommerce.sales.domain.ProductNotFoundException;
+import com.klemo.ecommerce.sales.catalog.service.domain.ProductNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
