@@ -17,6 +17,5 @@
         <module>catalog</module>
         <module>order</module>
         <module>cart/cart-domain</module>
-        <module>sales-common</module>
     </modules>
 </project>
