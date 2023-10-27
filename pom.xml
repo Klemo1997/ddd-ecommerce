@@ -22,6 +22,7 @@
         <module>common</module>
         <module>common/common-domain</module>
         <module>portal</module>
+        <module>warehouse</module>
     </modules>
 
     <properties>
@@ -69,6 +70,16 @@
             <dependency>
                 <groupId>com.klemo.ecommerce</groupId>
                 <artifactId>catalog-dataaccess</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.klemo.ecommerce</groupId>
+                <artifactId>warehouse-domain-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.klemo.ecommerce</groupId>
+                <artifactId>warehouse-application-service</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
