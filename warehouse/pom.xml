@@ -15,5 +15,6 @@
 
     <modules>
         <module>warehouse-domain</module>
+        <module>warehouse-infrastructure</module>
     </modules>
 </project>

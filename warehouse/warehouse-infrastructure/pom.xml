@@ -5,10 +5,15 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.klemo.ecommerce</groupId>
-        <artifactId>ecommerce</artifactId>
+        <artifactId>warehouse</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../../pom.xml</relativePath>
     </parent>
 
     <artifactId>warehouse-infrastructure</artifactId>
+
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>warehouse-dataaccess</module>
+    </modules>
 </project>

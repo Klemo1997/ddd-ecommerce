@@ -20,11 +20,8 @@
         <module>application</module>
         <module>sales</module>
         <module>common</module>
-        <module>common/common-domain</module>
         <module>portal</module>
         <module>warehouse</module>
-        <module>warehouse/warehouse-infrastructure</module>
-        <module>warehouse/warehouse-infrastructure/warehouse-dataaccess</module>
     </modules>
 
     <properties>
