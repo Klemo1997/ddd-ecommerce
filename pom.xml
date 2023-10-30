@@ -23,6 +23,8 @@
         <module>common/common-domain</module>
         <module>portal</module>
         <module>warehouse</module>
+        <module>warehouse/warehouse-infrastructure</module>
+        <module>warehouse/warehouse-infrastructure/warehouse-dataaccess</module>
     </modules>
 
     <properties>
@@ -90,6 +92,11 @@
             <dependency>
                 <groupId>com.klemo.ecommerce</groupId>
                 <artifactId>portal-application-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.klemo.ecommerce</groupId>
+                <artifactId>warehouse-dataaccess</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>

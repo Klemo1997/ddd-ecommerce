@@ -10,6 +10,7 @@ public record ProductDetailsResponse(
     @NonNull String title,
     @NonNull String description,
     @NonNull BigDecimal price,
-    @NonNull String currency
+    @NonNull String currency,
+    @NonNull Long quantity
 ) {
 }

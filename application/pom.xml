@@ -30,6 +30,10 @@
         </dependency>
         <dependency>
             <groupId>com.klemo.ecommerce</groupId>
+            <artifactId>warehouse-dataaccess</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.klemo.ecommerce</groupId>
             <artifactId>portal-application</artifactId>
         </dependency>
     </dependencies>
