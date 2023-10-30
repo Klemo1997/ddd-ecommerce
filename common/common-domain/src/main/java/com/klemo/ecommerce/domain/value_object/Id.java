@@ -2,7 +2,7 @@ package com.klemo.ecommerce.domain.value_object;
 
 import java.util.Objects;
 
-abstract class Id<T> {
+public abstract class Id<T> {
     private final T value;
 
     protected Id(T value) {
