@@ -6,6 +6,7 @@ import com.klemo.ecommerce.warehouse.service.domain.entity.Stock;
 import com.klemo.ecommerce.warehouse.service.domain.port.output.WarehouseRepository;
 import com.klemo.ecommerce.warehouse.service.infrastructure.dataaccess.entity.StockEntity;
 import com.klemo.ecommerce.warehouse.service.infrastructure.dataaccess.repository.StockJpaRepository;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -14,7 +15,7 @@ import java.util.Optional;
 @Component
 @RequiredArgsConstructor
 public class WarehouseRepositoryImpl implements WarehouseRepository {
-    private final StockJpaRepository stockJpaRepository;
+    @NonNull private final StockJpaRepository stockJpaRepository;
 
     @Override
     public Optional<Stock> findStockByProductId(ProductId productId) {
