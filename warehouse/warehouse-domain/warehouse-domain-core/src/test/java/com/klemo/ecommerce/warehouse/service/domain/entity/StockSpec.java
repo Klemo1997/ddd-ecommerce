@@ -1,7 +1,8 @@
-package com.klemo.ecommerce.warehouse.service.domain;
+package com.klemo.ecommerce.warehouse.service.domain.entity;
 
 import com.klemo.ecommerce.domain.value_object.ProductId;
 import com.klemo.ecommerce.domain.value_object.Quantity;
+import com.klemo.ecommerce.warehouse.service.domain.entity.Stock;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

@@ -1,4 +1,4 @@
-package com.klemo.ecommerce.warehouse.service.domain;
+package com.klemo.ecommerce.warehouse.service.domain.entity;
 
 import com.klemo.ecommerce.domain.entity.AggregateRoot;
 import com.klemo.ecommerce.domain.value_object.ProductId;
