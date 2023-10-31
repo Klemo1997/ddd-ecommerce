@@ -20,7 +20,7 @@ public class OrderRepositoryImpl implements OrderRepository {
     @NonNull private final OrderJpaRepository orderJpaRepository;
 
     @Override
-    public Order save(Order order) {
+    public Order save(@NonNull Order order) {
         OrderEntity savedEntity = orderJpaRepository.save(orderEntityFromOrder(order));
         return orderFromOrderEntity(savedEntity);
     }
