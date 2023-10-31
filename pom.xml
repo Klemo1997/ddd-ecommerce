@@ -22,6 +22,7 @@
         <module>common</module>
         <module>portal</module>
         <module>warehouse</module>
+        <module>payment</module>
     </modules>
 
     <properties>
