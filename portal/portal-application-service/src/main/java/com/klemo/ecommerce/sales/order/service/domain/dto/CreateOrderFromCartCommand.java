@@ -1,5 +1,5 @@
 package com.klemo.ecommerce.sales.order.service.domain.dto;
 
-import com.klemo.ecommerce.domain.value_object.CartId;
+import java.util.UUID;
 
-public record CreateOrderFromCartCommand(CartId cartId) {}
+public record CreateOrderFromCartCommand(UUID cartId) {}

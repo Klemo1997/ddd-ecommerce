@@ -1,5 +1,6 @@
 package com.klemo.ecommerce.sales.order.service.domain;
 
+import com.klemo.ecommerce.domain.value_object.CartId;
 import com.klemo.ecommerce.domain.value_object.OrderId;
 import com.klemo.ecommerce.domain.value_object.OrderItemId;
 import com.klemo.ecommerce.sales.cart.service.domain.CartNotFoundException;
@@ -27,7 +28,7 @@ public class CreateOrderFromCart {
     @NonNull private final OrderRepository orderRepository;
 
     public CreateOrderFromCartResponse create(CreateOrderFromCartCommand command) {
-        Cart cart = cartRepository.findCartById(command.cartId()).orElseThrow(() -> {
+        Cart cart = cartRepository.findCartById(new CartId(command.cartId())).orElseThrow(() -> {
             log.warn("Could not find cart with id: {}", command.cartId());
             return new CartNotFoundException("Could not find cart with id: " + command.cartId());
         });
