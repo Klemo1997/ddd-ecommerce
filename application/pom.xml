@@ -34,6 +34,10 @@
         </dependency>
         <dependency>
             <groupId>com.klemo.ecommerce</groupId>
+            <artifactId>order-dataaccess</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.klemo.ecommerce</groupId>
             <artifactId>portal-application</artifactId>
         </dependency>
     </dependencies>

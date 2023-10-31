@@ -2,6 +2,8 @@ package com.klemo.ecommerce.sales.cart.service.domain.entity;
 
 import com.klemo.ecommerce.domain.entity.AggregateRoot;
 import com.klemo.ecommerce.domain.value_object.CartId;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -32,5 +34,11 @@ public final class Cart extends AggregateRoot<CartId> {
         return items.stream().anyMatch(i -> i.getProductId().equals(item.getProductId()));
     }
 
+    public boolean hasItems() {
+        return !items.isEmpty();
+    }
+
     public static class CartAlreadyContainsProductException extends RuntimeException {}
+
+    public static class CartHasNoItemsException extends RuntimeException {}
 }

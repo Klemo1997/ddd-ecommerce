@@ -10,11 +10,13 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaRepositories(basePackages = {
     "com.klemo.ecommerce.sales.cart.service.infrastructure.dataaccess",
     "com.klemo.ecommerce.sales.catalog.service.infrastructure.dataaccess",
+    "com.klemo.ecommerce.sales.order.service.infrastructure.dataaccess",
     "com.klemo.ecommerce.warehouse.service.infrastructure.dataaccess"
 })
 @EntityScan(basePackages = {
     "com.klemo.ecommerce.sales.cart.service.infrastructure.dataaccess",
     "com.klemo.ecommerce.sales.catalog.service.infrastructure.dataaccess",
+    "com.klemo.ecommerce.sales.order.service.infrastructure.dataaccess",
     "com.klemo.ecommerce.warehouse.service.infrastructure.dataaccess"
 })
 @SpringBootApplication(scanBasePackages = "com.klemo.ecommerce")

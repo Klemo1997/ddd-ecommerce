@@ -28,6 +28,20 @@ public class Order extends AggregateRoot<OrderId> {
         this.orderStatus = orderStatus;
     }
 
+    public Order(
+            OrderId id,
+            StreetAddress deliveryAddress,
+            List<OrderItem> items,
+            TrackingId trackingId
+    ) {
+        this.setId(id);
+        this.deliveryAddress = deliveryAddress;
+        this.items = items;
+        this.trackingId = trackingId;
+        this.orderStatus = OrderStatus.PENDING;
+    }
+
+
     public StreetAddress getDeliveryAddress() {
         return deliveryAddress;
     }
