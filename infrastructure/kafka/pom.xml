@@ -5,16 +5,17 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.klemo.ecommerce</groupId>
-        <artifactId>payment-domain</artifactId>
+        <artifactId>infrastructure</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>payment-application-service</artifactId>
+    <artifactId>kafka</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>com.klemo.ecommerce</groupId>
-            <artifactId>payment-domain-core</artifactId>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+            <version>${spring-kafka.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

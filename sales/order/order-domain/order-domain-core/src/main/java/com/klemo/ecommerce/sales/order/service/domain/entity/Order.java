@@ -2,10 +2,12 @@ package com.klemo.ecommerce.sales.order.service.domain.entity;
 
 import com.klemo.ecommerce.domain.entity.AggregateRoot;
 import com.klemo.ecommerce.domain.value_object.OrderId;
+import com.klemo.ecommerce.sales.order.service.domain.OrderPriceCalculator;
 import com.klemo.ecommerce.sales.order.service.domain.value_object.OrderStatus;
 import com.klemo.ecommerce.sales.order.service.domain.value_object.StreetAddress;
 import com.klemo.ecommerce.sales.order.service.domain.value_object.TrackingId;
 
+import java.util.Currency;
 import java.util.List;
 
 public class Order extends AggregateRoot<OrderId> {
@@ -26,6 +28,29 @@ public class Order extends AggregateRoot<OrderId> {
         this.items = items;
         this.trackingId = trackingId;
         this.orderStatus = orderStatus;
+
+        checkOrderIsNotEmpty();
+        checkItemCurrencies();
+    }
+
+    private void checkOrderIsNotEmpty() {
+        if (items.isEmpty()) {
+            throw new OrderHasNoItemsException();
+        }
+    }
+
+    private void checkItemCurrencies() {
+        if (items.isEmpty()) {
+            return;
+        }
+
+        Currency currency = items.get(0).getPrice().currency();
+
+        for (OrderItem item : items) {
+            if (!item.getPrice().currency().equals(currency)) {
+                throw new OrderHasItemsWithDifferentCurrenciesException();
+            }
+        }
     }
 
     public Order(
@@ -57,4 +82,7 @@ public class Order extends AggregateRoot<OrderId> {
     public OrderStatus getOrderStatus() {
         return orderStatus;
     }
+
+    public static class OrderHasNoItemsException extends RuntimeException {}
+    public static class OrderHasItemsWithDifferentCurrenciesException extends RuntimeException {}
 }

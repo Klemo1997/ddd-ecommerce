@@ -23,11 +23,13 @@
         <module>portal</module>
         <module>warehouse</module>
         <module>payment</module>
+        <module>infrastructure</module>
     </modules>
 
     <properties>
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
         <junit-jupiter.version>5.10.0</junit-jupiter.version>
+        <spring-kafka.version>3.0.6</spring-kafka.version>
     </properties>
 
     <dependencyManagement>
@@ -110,6 +112,31 @@
             <dependency>
                 <groupId>com.klemo.ecommerce</groupId>
                 <artifactId>order-dataaccess</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.klemo.ecommerce</groupId>
+                <artifactId>order-messaging</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.klemo.ecommerce</groupId>
+                <artifactId>payment-domain-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.klemo.ecommerce</groupId>
+                <artifactId>payment-application-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.klemo.ecommerce</groupId>
+                <artifactId>payment-messaging</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.klemo.ecommerce</groupId>
+                <artifactId>kafka</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>

@@ -38,6 +38,14 @@
         </dependency>
         <dependency>
             <groupId>com.klemo.ecommerce</groupId>
+            <artifactId>order-messaging</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.klemo.ecommerce</groupId>
+            <artifactId>payment-messaging</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.klemo.ecommerce</groupId>
             <artifactId>portal-application</artifactId>
         </dependency>
     </dependencies>

@@ -15,5 +15,6 @@
 
     <modules>
         <module>payment-domain</module>
+        <module>payment-infrastructure</module>
     </modules>
 </project>

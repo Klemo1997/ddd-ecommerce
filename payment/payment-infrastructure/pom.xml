@@ -5,16 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.klemo.ecommerce</groupId>
-        <artifactId>order</artifactId>
+        <artifactId>payment</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>order-infrastructure</artifactId>
-
+    <artifactId>payment-infrastructure</artifactId>
     <packaging>pom</packaging>
-
     <modules>
-        <module>order-dataaccess</module>
-        <module>order-messaging</module>
+        <module>payment-messaging</module>
     </modules>
 </project>
