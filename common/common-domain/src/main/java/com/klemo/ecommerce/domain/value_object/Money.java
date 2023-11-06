@@ -40,4 +40,16 @@ public record Money(long cents, Currency currency) {
     public String toString() {
         return String.format("%s %s", amount(), currency.getCurrencyCode());
     }
+
+    public Money add(Money other) {
+        if (!currency.equals(other.currency)) {
+            throw new IllegalArgumentException("Cannot sum up Money objects with different currencies");
+        }
+
+        return new Money(cents + other.cents, currency);
+    }
+
+    public Money multiply(long multiplier) {
+        return new Money(cents * multiplier, currency);
+    }
 }
